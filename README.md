@@ -1,5 +1,6 @@
-# projeto_Framework
-## Matéria: Programação
+# Projeto Framework
+
+## Matéria: Estrutura de Dados e Programação
 
 ### Integrantes:
 - Ana Beatriz Macedo
