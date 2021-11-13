@@ -8,3 +8,4 @@
 - Ana Beatriz Macedo
 - Bruna Bellini
 - Heloísa Mariani
+- Abdul Malik
