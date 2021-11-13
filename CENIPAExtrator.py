@@ -6,7 +6,7 @@ import pandas as pd
 
 class CENIPAExtrator:
 	'''
-	Esta supercalsse representa um extrator com finalidade de utilizar dados públicos para entender características e correlações aeronáuticas da aviação civil brasileira nos últimos 10 anos
+	Esta superclasse representa um extrator com finalidade de utilizar dados públicos para entender características e correlações aeronáuticas da aviação civil brasileira nos últimos 10 anos
 	'''
 	def __init__(self):
 		'''
@@ -106,7 +106,7 @@ class Insights(CENIPAExtrator):
 		df['aeronave_nivel_dano','ocorrencia_classificacao', 'aeronave_fatalidades_total']
 		pass
 
-	def ocorencia_MesHora(df):
+	def ocorrencia_MesHora(df):
 		'''
 		Essa função tem o objetivo de 
   		'''
@@ -114,7 +114,7 @@ class Insights(CENIPAExtrator):
 		pass
 
 
-# Utilize o espaço abaixo para rodar as funçoes que deseja utilizar, não se esqueça de chamar a classe desejada antes de usufruir da função dentro da mesma
+# Utilize o espaço abaixo para rodar as funções que deseja utilizar, não se esqueça de chamar a classe desejada antes de usufruir da função dentro da mesma
 
 teste = Insights()
 print(teste.get_table())
