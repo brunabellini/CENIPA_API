@@ -1,4 +1,4 @@
-# Projeto Framework
+# Extrator CENIPA
 
 ## Ciência de Dados e Inteligência Artificial na PUC-SP
 ### Matéria: Estrutura de Dados e Programação
