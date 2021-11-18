@@ -1,11 +1,12 @@
 # CENIPA API
 
-## Ciência de Dados e Inteligência Artificial na PUC-SP
-### Matéria: Estrutura de Dados e Programação
-### Professor: Jefferson de Oliveira Silva 
+## Como usar
 
-### Integrantes:
-- Ana Beatriz Macedo
-- Bruna Bellini
-- Heloísa Mariani
-- Abdul Malik
+    (Inserir aqui o pip)
+    
+    
+
+
+## Importar a bilioteca
+
+    (Comando)
