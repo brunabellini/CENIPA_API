@@ -237,12 +237,19 @@ class Insights(CENIPA_API):
   		'''
 		return self.df[['aeronave_nivel_dano', 'ocorrencia_classificacao', 'aeronave_fatalidades_total']]
 
-	def ocorrencia_MesHora(self): #FAZER AMANHA
+	def ocorrencia_MesHora(self): 
 		'''
-		Essa função tem o objetivo de 
+		Essa função tem o objetivo de apresentar os meses e horários que mais existem ocorrências
   		'''
-		df['ocorrencia_dia','ocorrencia_hora']
-		pass
+		df_mh = self.df[['ocorrencia_dia','ocorrencia_hora']]
+		novo_df = df_mh['ocorrencia_dia'].str.split("/", n=2, expand= True).astype(int)
+		df_mh['mes_ocorrencia']= novo_df[1]
+		df_mh['ano_ocorrencia']= novo_df[2]
+		df_mh.drop('ocorrencia_dia', axis=1, inplace= True)
+		m = df_mh['mes_ocorrencia'].value_counts().index.tolist()[0]
+		a = df_mh['ano_ocorrencia'].value_counts().index.tolist()[0]
+		h = df_mh['ocorrencia_hora'].value_counts().index.tolist()[0] 
+		return f'Top mês, dia e hora das ocorrências: \nMês: {m}\nAno: {a}\nHora: {h}'
 
 class ColunaInexistente(Exception):
     pass
@@ -255,4 +262,4 @@ class ColunaNaoCalculavel(Exception):
 Utilize o espaço abaixo para rodar as funções que deseja utilizar, não se esqueça de chamar a classe desejada antes de usufruir da função dentro da mesma
 '''
 teste=Insights()
-print(teste.top_fatores_contribuintes())
+print(teste.ocorrencia_MesHora())
