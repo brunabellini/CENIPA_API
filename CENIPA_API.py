@@ -57,7 +57,7 @@ class CENIPA_API:
 		'''
         Essa função tem o objetivo de um dataset para a analise das fatores das aeronaves
         '''
-		cols=['aeronave_tipo_veiculo','aeronave_fabricante','aeronave_modelo','aeronave_tipo_icao','aeronave_motor_tipo','aeronave_ano_fabricacao','aeronave_pais_fabricante','aeronave_pais_registro','aeronave_registro_categoria','aeronave_registro_segmento','aeronave_voo_origem','aeronave_voo_destino','aeronave_fase_operacao','aeronave_tipo_operacao','aeronave_nivel_dano']
+		cols=['aeronave_tipo_veiculo','aeronave_fabricante','aeronave_modelo','aeronave_tipo_icao','aeronave_motor_tipo','aeronave_ano_fabricacao','aeronave_pais_fabricante','aeronave_pais_registro','aeronave_registro_categoria','aeronave_registro_segmento','aeronave_voo_origem','aeronave_voo_destino','aeronave_fase_operacao','aeronave_tipo_operacao','aeronave_nivel_dano', 'aeronave_fatalidades_total']
 		self.df_aero = self.df[cols]
 		return self.df_aero
 
@@ -124,7 +124,7 @@ class Insights(CENIPA_API):
 			raise ColunaNaoCalculavel('Essa coluna não é de um tipo calculável.')
 		return self.result
  
-	def desvio_padrao_coluna(df):
+	def desvio_padrao_coluna(self,col):
 		'''
 		Essa função tem o objetivo de retornar o desvio padrão de uma coluna do dataset
 		'''
@@ -176,33 +176,42 @@ class Insights(CENIPA_API):
 		ax.set_title('Porcentagem por classificação da ocorrência')
 		plt.show()	 
 		
-	def top_aeronaves(self): #FAZER
+	def tipos_mortes_aeronaves(self): 
 		'''
-		Essa função tem o objetivo de 
+		Essa função tem o objetivo de retornar os tipos de aeronaves e a porcentagem de ocorrencias fatais nas aeronaves listadas com ocorrências
   		'''
-		df['aeronave_registro_categoria']
-		pass
+		print(self.df['aeronave_registro_categoria'].value_counts())
+		df_tpa = self.df[['aeronave_registro_categoria', 'aeronave_fatalidades_total']]
+		ma = (df_tpa.loc[df_tpa['aeronave_registro_categoria'] == 'AVIÃO', 'aeronave_fatalidades_total'].sum()*100) / df_tpa['aeronave_registro_categoria'].value_counts()[0]
+		mh = (df_tpa.loc[df_tpa['aeronave_registro_categoria'] == 'HELICÓPTERO', 'aeronave_fatalidades_total'].sum()*100) / df_tpa['aeronave_registro_categoria'].value_counts()[1]
+		mp =  (df_tpa.loc[df_tpa['aeronave_registro_categoria'] == 'PLANADOR', 'aeronave_fatalidades_total'].sum()*100) / df_tpa['aeronave_registro_categoria'].value_counts()[2]
+		mu = (df_tpa.loc[df_tpa['aeronave_registro_categoria'] == 'ULTRALEVE', 'aeronave_fatalidades_total'].sum()*100) / df_tpa['aeronave_registro_categoria'].value_counts()[3]
+		maf = (df_tpa.loc[df_tpa['aeronave_registro_categoria'] == 'ANFÍBIO', 'aeronave_fatalidades_total'].sum()*100) / df_tpa['aeronave_registro_categoria'].value_counts()[4]
+		return f'\033[1mEntre os tipos de aeronaves, encontram-se a porcentagem de ocorrências fatais:\033[0m \n   Avião {ma:.2f}%\n   Helicóptero {mh:.2f}%\n   Planador {mp:.2f}%\n   Ultraleve {mu:.2f}%\n   Anfíbio {maf:.2f}%'
+    
+	def top_fatores_contribuintes(self):
+		'''
+		Essa função tem o objetivo de retornar os top fatores contribuintes
+  		'''
+		n1= self.df['fator_nome'].value_counts().index.tolist()[0]
+		n2= self.df['fator_nome'].value_counts().index.tolist()[1]
+		n3= self.df['fator_nome'].value_counts().index.tolist()[2]
+		a1= self.df['fator_aspecto'].value_counts().index.tolist()[0]
+		a2= self.df['fator_aspecto'].value_counts().index.tolist()[1]
+		a3= self.df['fator_aspecto'].value_counts().index.tolist()[2]
+		c1= self.df['fator_condicionante'].value_counts().index.tolist()[0]
+		c2= self.df['fator_condicionante'].value_counts().index.tolist()[1]
+		c3= self.df['fator_condicionante'].value_counts().index.tolist()[2]
+		ar1= self.df['fator_area'].value_counts().index.tolist()[0]
+		ar2= self.df['fator_area'].value_counts().index.tolist()[1]
+		ar3= self.df['fator_area'].value_counts().index.tolist()[2]
+		return f'Top fatores contribuintes: \nNome do fator: {n1}, {n2}, {n3}\nAspecto: {a1}, {a2}, {a3}\nCondicionante: {c1}, {c2}, {c3}\nArea: {ar1} e {ar2}'
 
-	def tipo_aeronave(self):#FAZER
+	def ocorrencia_tipo(self):
 		'''
-		Essa função tem o objetivo de 
+		Essa função tem o objetivo de entender quais são as ocorrências mais frequentes 
   		'''
-		df['aeronave_registro_segmento']
-		pass
-
-	def top_fatores_contribuintes(self):#FAZER
-		'''
-		Essa função tem o objetivo de 
-  		'''
-		df['fator_nome', 'fator_aspecto','fator_condicionante','fator_area']
-		pass
-
-	def ocorrencia_tipo(self): #FAZER
-		'''
-		Essa função tem o objetivo de 
-  		'''
-		df['ocorrencia_tipo','ocorrencia_tipo_categoria']
-		pass
+		return self.df['ocorrencia_tipo'].value_counts()
 
 	def ocorrencia_estados(self, nome_UF): 
 		'''
@@ -228,7 +237,7 @@ class Insights(CENIPA_API):
   		'''
 		return self.df[['aeronave_nivel_dano', 'ocorrencia_classificacao', 'aeronave_fatalidades_total']]
 
-	def ocorrencia_MesHora(self): #FAZER
+	def ocorrencia_MesHora(self): #FAZER AMANHA
 		'''
 		Essa função tem o objetivo de 
   		'''
@@ -245,3 +254,5 @@ class ColunaNaoCalculavel(Exception):
 '''
 Utilize o espaço abaixo para rodar as funções que deseja utilizar, não se esqueça de chamar a classe desejada antes de usufruir da função dentro da mesma
 '''
+teste=Insights()
+print(teste.top_fatores_contribuintes())
