@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'CENIPA_API',
-    version = '1.0.0',
+    version = '1.0.1',
     author = 'Abdul Malik de Barros \nAna Beatriz Oliveira de Macedo \nBruna Bellini Faria \nHeloisa Mariani Rodrigues',
     packages = ['CENIPA_API'],
     license= 'MIT',
