@@ -55,7 +55,7 @@ class CENIPA_API:
 
 	def get_aeronave(self):
 		'''
-        Essa função tem o objetivo de um dataset para a analise das fatores das aeronaves
+        Essa função tem o objetivo de retornar um dataset para a analise das fatores das aeronaves
         '''
 		cols=['aeronave_tipo_veiculo','aeronave_fabricante','aeronave_modelo','aeronave_tipo_icao','aeronave_motor_tipo','aeronave_ano_fabricacao','aeronave_pais_fabricante','aeronave_pais_registro','aeronave_registro_categoria','aeronave_registro_segmento','aeronave_voo_origem','aeronave_voo_destino','aeronave_fase_operacao','aeronave_tipo_operacao','aeronave_nivel_dano', 'aeronave_fatalidades_total']
 		self.df_aero = self.df[cols]
@@ -76,7 +76,7 @@ class Insights(CENIPA_API):
 	'''
 	def moda_coluna(self, col): 
 		'''
-		Essa função tem o objetivo de retornar o valor mais recorrente em uma coluna do df
+		Essa função tem o objetivo de retornar o valor mais recorrente em uma coluna escolhida do dataset
 		'''
 		try:
 			result = self.df[col].value_counts()
@@ -93,7 +93,7 @@ class Insights(CENIPA_API):
 
 	def mediana_coluna(self, col):
 		'''
-		Essa função tem o objetivo de retornar a mediana de uma coluna do dataset
+		Essa função tem o objetivo de retornar a mediana de uma coluna escolhida do dataset
 		'''
 		result = self.df[col].median()
 		restr = str(result)
@@ -106,7 +106,7 @@ class Insights(CENIPA_API):
 
 	def media_coluna(self,col):
 		'''
-		Essa função tem o objetivo de retornar a média de uma coluna do dataset
+		Essa função tem o objetivo de retornar a média de uma coluna escolhida do dataset
 		'''
 		try:
 			self.result = self.df[col].mean()
@@ -116,7 +116,7 @@ class Insights(CENIPA_API):
         
 	def variancia_coluna(self,col):
 		'''
-		Essa função tem o objetivo de retornar a variancia de uma coluna do dataset
+		Essa função tem o objetivo de retornar a variancia de uma coluna escolhida do dataset
 		'''
 		try:
 			self.result = np.var(self.df[col])
@@ -126,7 +126,7 @@ class Insights(CENIPA_API):
  
 	def desvio_padrao_coluna(self,col):
 		'''
-		Essa função tem o objetivo de retornar o desvio padrão de uma coluna do dataset
+		Essa função tem o objetivo de retornar o desvio padrão de uma coluna escolhida do dataset
 		'''
 		try:
 			self.result = self.df[col].std()
@@ -136,7 +136,7 @@ class Insights(CENIPA_API):
  
 	def gravidade_acidentes(self): 
 		'''
-		Essa função tem o objetivo de a partir de gerar o número de mortes totais e alguns gráficos com insights sobrer nível de dano, fatalidade e classificação da ocorrência
+		Essa função tem o objetivo de gerar o número de mortes totais e alguns gráficos com insights sobrer nível de dano, fatalidade e classificação da ocorrência
   		'''
 		df_ta = self.df[['aeronave_nivel_dano', 'ocorrencia_classificacao', 'aeronave_fatalidades_total']]
 		num_mortes = df_ta['aeronave_fatalidades_total'].sum()
@@ -204,12 +204,11 @@ class Insights(CENIPA_API):
 		c3= self.df['fator_condicionante'].value_counts().index.tolist()[2]
 		ar1= self.df['fator_area'].value_counts().index.tolist()[0]
 		ar2= self.df['fator_area'].value_counts().index.tolist()[1]
-		ar3= self.df['fator_area'].value_counts().index.tolist()[2]
 		return f'Top fatores contribuintes: \nNome do fator: {n1}, {n2}, {n3}\nAspecto: {a1}, {a2}, {a3}\nCondicionante: {c1}, {c2}, {c3}\nArea: {ar1} e {ar2}'
 
 	def ocorrencia_tipo(self):
 		'''
-		Essa função tem o objetivo de entender quais são as ocorrências mais frequentes 
+		Essa função tem o objetivo de visualizar quais são as ocorrências mais frequentes 
   		'''
 		return self.df['ocorrencia_tipo'].value_counts()
 
@@ -251,15 +250,28 @@ class Insights(CENIPA_API):
 		h = df_mh['ocorrencia_hora'].value_counts().index.tolist()[0] 
 		return f'Top mês, dia e hora das ocorrências: \nMês: {m}\nAno: {a}\nHora: {h}'
 
+	def ocorrencia_ano(self, ano): 
+		'''
+		Essa função tem o objetivo de apresentar as informações de acordo com o ano selecionado
+  		'''
+		col_ano = self.df['ocorrencia_dia'].str.split("/", n=2, expand= True).astype(int)
+		self.df['ano_ocorrencia']= col_ano[2]
+		pesq_ano = self.df.loc[(self.df['ano_ocorrencia']==ano)]
+		if len(pesq_ano)==0:
+			raise ExceçãoAnoInexistente('Não há ocorrências para esse ano')
+		return pesq_ano
+
 class ColunaInexistente(Exception):
     pass
 
 class ColunaNaoCalculavel(Exception):
     pass
 
+class ExceçãoEstadoInexistente(Exception):
+    pass
 
-'''
-Utilize o espaço abaixo para rodar as funções que deseja utilizar, não se esqueça de chamar a classe desejada antes de usufruir da função dentro da mesma
-'''
-teste=Insights()
-print(teste.ocorrencia_MesHora())
+class ExceçãoCidadeInexistente(Exception):
+    pass
+
+class ExceçãoAnoInexistente(Exception):
+    pass
