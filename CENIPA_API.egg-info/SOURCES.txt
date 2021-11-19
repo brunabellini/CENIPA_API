@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+CENIPA_API/CENIPA_API.py
+CENIPA_API/__init__.py
+CENIPA_API.egg-info/PKG-INFO
+CENIPA_API.egg-info/SOURCES.txt
+CENIPA_API.egg-info/dependency_links.txt
+CENIPA_API.egg-info/top_level.txt
