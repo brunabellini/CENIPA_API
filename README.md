@@ -1,4 +1,4 @@
-# CENIPA API
+# CENIPA API <img src="https://lh3.googleusercontent.com/proxy/aw4_WQfFuL72Rerwp3dQFd66z0UIpEte-f3BE_0dYKnpxt_ShbGVIcklVfAsEu0-wCw9KBbQWPcB9IkqT6HXJyFDo1jniIXDFpEgE7EHg9yS733wXs-acEQHOWmISmM" alt="rails" align='right' width='140' height='140' style='max-width: 100%;'></img>
 
 ## Descrição
 O CENIPA API é um framework que auxilia o entendimento sobre acidentes aéreos no Brasil com auxílio de sua base de dados pública. Facilitando, assim, o seu acesso e uso.
