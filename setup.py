@@ -4,7 +4,9 @@ setup(
     name = 'CENIPA_API',
     version = '0.0.3',
     description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA',
-    long_description = long_description,
+    long_description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA para '
+                        + 'retornar datasets individuais com informações sobre, acidentes, fatores contribuintes, aeronave e recomendações, '
+                        + 'retornar insights das informações (colunas) do dataset',
     long_description_content_type='text/markdown',
     author = 'Alunos Ciência de Dados PUC-SP',
     packages = ['CENIPA_API'],
