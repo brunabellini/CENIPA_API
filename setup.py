@@ -2,11 +2,15 @@ from setuptools import setup
 
 setup(
     name = 'CENIPA_API',
-    version = '1.0.1',
-    author = 'Abdul Malik de Barros \nAna Beatriz Oliveira de Macedo \nBruna Bellini Faria \nHeloisa Mariani Rodrigues',
+    version = '0.0.2',
+    description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA',
+    long_description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA para '
+                        + 'retornar datasets individuais com informações sobre, acidentes, fatores contribuintes, aeronave e recomendações, '
+                        + 'retornar insights das informações (colunas) do dataset',
+    author = 'Alunos Ciência de Dados PUC-SP',
     packages = ['CENIPA_API'],
     license= 'MIT',
-    keywords = 'API acidentes CENIPA',
+    keywords = ['API', 'acidentes', 'CENIPA', ],
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Science/Research',
@@ -17,13 +21,5 @@ setup(
         'Topic :: Database',
         'Topic :: Scientific/Engineering :: Information Analysis'
     ],
-    description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA',
-    long_description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA para '
-                        + 'retornar datasets individuais com informações sobre, acidentes, fatores contribuintes, aeronave e recomendações, '
-                        + 'retornar insights das informações (colunas) do dataset',
-    url = 'https://github.com/brunabellini/CENIPA_API',
-    project_urls = {
-        'Código fonte': 'https://github.com/brunabellini/CENIPA_API',
-        'Download': 'https://github.com/brunabellini/CENIPA_API/archive/1.0.0.zip'
-    }
+    url = 'https://github.com/brunabellini/CENIPA_API'
 )
