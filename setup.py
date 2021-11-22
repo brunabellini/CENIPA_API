@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'CENIPA_API',
-    version = '0.0.2',
+    version = '0.0.3',
     description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA',
     long_description = long_description,
     long_description_content_type='text/markdown',
