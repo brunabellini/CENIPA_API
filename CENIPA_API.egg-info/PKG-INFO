@@ -1,11 +1,104 @@
 Metadata-Version: 2.1
 Name: CENIPA-API
-Version: 0.0.3
+Version: 0.0.4
 Summary: Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA
 Home-page: https://github.com/brunabellini/CENIPA_API
 Author: Alunos Ciência de Dados PUC-SP
 License: MIT
-Description: Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA para retornar datasets individuais com informações sobre, acidentes, fatores contribuintes, aeronave e recomendações, retornar insights das informações (colunas) do dataset
+Description: <center><h2>CENIPA API</h2></center> 
+        <p>O CENIPA API Ã© um framework que auxilia o entendimento sobre acidentes aÃ©reos no Brasil com auxÃ­lio de sua base de dados pÃºblica. Facilitando, assim, o seu acesso e uso.</p>
+        
+        <h4><a href="#about">Autores</a> | <a href="#introduction">IntroduÃ§Ã£o</a> | <a href="#instruction">InstruÃ§Ãµes de uso</a> | <a href="#reference">ReferÃªncia</a> | <a href="#functions">FunÃ§Ãµes disponÃ­veis</a> |</h4>
+        
+        
+        <h2 id="about">Autores</h2>
+        
+        <br />
+        
+        <p><b>Turma da graduaÃ§Ã£o de CiÃªncia de Dados e InteligÃªncia Artificial na PUC-SP<b/></p>
+        
+        <br />
+        
+        <p>Abdul Malik de Barros</p> 	
+        <p>Ana Beatriz Oliveira de Macedo</p> 
+        <p>Bruna Bellini Faria</p> 
+        <p>Heloisa Mariani Rodrigues</p>  
+        
+        <br />
+        
+        <h2 id="introduction">IntroduÃ§Ã£o </h2>
+        
+        
+        <p>
+        	<p>Diante da fatalidade que ocorreu no dia 5 de novembro, que ocasionou na morte da cantora MarÃ­lia MendonÃ§a e maisÂ 4 pessoas, nosso grupo iniciou uma pesquisaÂ sobreÂ acidentes aÃ©reos, identificamos umaÂ base de dados de ocorrÃªncias aeronÃ¡uticas, que Ã© gerenciada pelo Centro de InvestigaÃ§Ã£o e PrevenÃ§Ã£o de Acidentes AeronÃ¡uticosÂ (CENIPA).Â Â Constam nesta base de dados as ocorrÃªncias aeronÃ¡uticas notificadas ao CENIPA nos Ãºltimos 10 anos e que ocorreram em solo brasileiro.Â O relatÃ³rio conta com detalhes sobreÂ os acidentes, fatalidades, caracterÃ­sticasÂ das aeronaves,Â causas e fatores contribuintes, local,Â data,Â horÃ¡rioÂ do eventoÂ e recomendaÃ§Ãµes.Â A partir disso, compilamosÂ os dados sobre as ocorrÃªncias eÂ trouxemos algumas anÃ¡lises sobre o que obtemos, com grÃ¡ficos,Â estatÃ­sticasÂ eÂ Dataframes. Permitindo uma ampla visualizaÃ§Ã£o, a compreensÃ£o mais abrangente dos fatosÂ ocorridosÂ e aÂ obtenÃ§Ã£o de conclusÃµes.Â </p>
+        	
+        </p>
+        
+        <br />
+        
+        <h2 id="instruction">InstruÃ§Ãµes de uso</h2>
+        
+        <strong>Bibliotecas necessÃ¡rias</strong>
+        
+            pandas
+            matplotlib
+            re
+            numpy
+        
+        <br />
+        
+        <strong>Instalando esta API</strong>
+        
+            pip install CENIPA_API
+        
+        <h2>Resultados</h2>
+        
+        Abaixo vocÃª encontra o link do repositÃ³rio com todos os cÃ³digos e dados atÃ© entÃ£o coletados para a evoluÃ§Ã£o do projeto e anÃ¡lise de dados para o desenvolvimento da pÃ¡gina de visualizaÃ§Ã£o.
+        
+        <ul>
+        	<li>ttps://github.com/brunabellini/CENIPA_API</li>
+        </ul>
+        <br />
+        	
+        <h2 id="functions">FunÃ§Ãµes disponÃ­veis</h2>
+        
+        | Nome da funÃ§Ã£o:                | O que ela executa:                                                                                                   |
+        | :----------------------------- | :------------------------------------------------------------------------------------------------------------------- |
+        |`get_table()`| Retornar e mostrar o Dataset dentro do terminal                                                                                         |
+        |`get_acidente()`| Retornar um dataset com as colunas relevantes para analise sobre os acidentes                                                        |
+        |`get_fator_contribuinte()`| Retornar um dataset com os fatores contribuintes para o acidente                                                           |
+        |`get_aeronave()`| Retornar um dataset para a analise das fatores das aeronaves                                                                         |
+        |`get_recomendacao()`| Retornar um dataset para a analise das recomendaÃ§Ãµes do casos                                                                    |
+        |`moda_coluna(col)`| Retornar o valor mais recorrente em uma coluna escolhida do dataset                                                                |
+        |`mediana_coluna(col)`| Retornar a mediana de uma coluna escolhida do dataset                                                                           |
+        |`media_coluna(col)`| Retornar a mÃ©dia de uma coluna escolhida do dataset                                                                               |
+        |`variancia_coluna(col)`| Retornar a variancia de uma coluna escolhida do dataset                                                                       |
+        |`desvio_padrao_coluna(col)`| Retornar o desvio padrÃ£o de uma coluna escolhida do dataset                                                               |
+        |`gravidade_acidentes()`| Gerar o nÃºmero de mortes totais e alguns grÃ¡ficos com insights sobrer nÃ­vel de dano, fatalidade e classificaÃ§Ã£o da ocorrÃªncia |
+        |`tipos_mortes_aeronaves()`| Retornar os tipos de aeronaves e a porcentagem de ocorrencias fatais nas aeronaves listadas com ocorrÃªncias                |
+        |`top_fatores_contribuintes()`| Retornar os top fatores contribuintes                                                                                   |
+        |`ocorrencia_tipo()`| Visualizar quais sÃ£o as ocorrÃªncias mais frequentes                                                                               |
+        |`ocorrencia_estados(nome_UF)`| Filtrar ocorrÃªncias pela sigla dos estados                                                                              |
+        |`ocorrencia_cidade(nome_cidade)`| Filtrar ocorrÃªncias pelo nome de cidades                                                                             |
+        |`informacoes_acidentes()`| Retornar informaÃ§Ãµes sobre a gravidade e detalhes de fatalidade do acidente                                                 |
+        |`ocorrencia_MesHora()`| Apresentar os meses e horÃ¡rios que mais existem ocorrÃªncias                                                                    |
+        |`ocorrencia_ano(ano)`| Apresentar as informaÃ§Ãµes de acordo com o ano selecionado                                                                       |
+        
+        <p>Legenda para variÃ¡veis das funÃ§Ãµes:
+        	<ul>
+        		<li>col= coluna que deseja utilizar</li>
+        		<li>nome_UF= nome da sigla do estado que deseja utilizar</li>
+        	</ul>
+        </p>
+        
+        <h2 id="reference">ReferÃªncia</h2>
+        
+        <ul>
+        	<li>https://dados.gov.br/dataset/ocorrencias-aeronauticas-da-aviacao-civil-brasileira</li>
+        </ul>
+        
+        <br />
+        
 Keywords: API,acidentes,CENIPA,analise de dados
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
