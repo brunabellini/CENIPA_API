@@ -1,17 +1,13 @@
-Metadata-Version: 1.2
+Metadata-Version: 1.1
 Name: CENIPA-API
-Version: 1.0.1
+Version: 0.0.2
 Summary: Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA
 Home-page: https://github.com/brunabellini/CENIPA_API
-Author: Abdul Malik de Barros 
-Ana Beatriz Oliveira de Macedo 
-Bruna Bellini Faria 
-Heloisa Mariani Rodrigues
+Author: Alunos Ciência de Dados PUC-SP
+Author-email: UNKNOWN
 License: MIT
-Project-URL: Código fonte, https://github.com/brunabellini/CENIPA_API
-Project-URL: Download, https://github.com/brunabellini/CENIPA_API/archive/1.0.0.zip
 Description: Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA para retornar datasets individuais com informações sobre, acidentes, fatores contribuintes, aeronave e recomendações, retornar insights das informações (colunas) do dataset
-Keywords: API acidentes CENIPA
+Keywords: API,acidentes,CENIPA
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Science/Research
