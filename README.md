@@ -53,7 +53,7 @@
 <br />
 
 <strong>Utilizando a API</strong>
-<p>Chame uma das duas classes da biblioteca, rceomendamos que utilizem a classe Insights, pois essa herda s funções da CENIPA_API, assim você obterá acesso a todas as funções disponíveis da biblioteca. Segue abaixo exemplos de uso:</p>
+<p>Chame uma das duas classes da biblioteca, recomendamos que utilizem a classe Insights, pois essa herda as funções da CENIPA_API, assim você obterá acesso a todas as funções disponíveis da biblioteca. Segue abaixo exemplos de uso:</p>
 
 <p>Chamando diretamente pelo comando do import</p>
 
@@ -88,7 +88,7 @@
 |`media_coluna(col)`| Retornar a média de uma coluna escolhida do dataset                                                                               |
 |`variancia_coluna(col)`| Retornar a variancia de uma coluna escolhida do dataset                                                                       |
 |`desvio_padrao_coluna(col)`| Retornar o desvio padrão de uma coluna escolhida do dataset                                                               |
-|`gravidade_acidentes()`| Gerar o número de mortes totais e alguns gráficos com insights sobrer nível de dano, fatalidade e classificação da ocorrência |
+|`gravidade_acidentes()`| Gerar o número de mortes totais e alguns gráficos com insights sobre nível de dano, fatalidade e classificação da ocorrência |
 |`tipos_mortes_aeronaves()`| Retornar os tipos de aeronaves e a porcentagem de ocorrencias fatais nas aeronaves listadas com ocorrências                |
 |`top_fatores_contribuintes()`| Retornar os top fatores contribuintes                                                                                   |
 |`ocorrencia_tipo()`| Visualizar quais são as ocorrências mais frequentes                                                                               |
