@@ -49,7 +49,7 @@
 Abaixo você encontra o link do repositório com todos os códigos e dados até então coletados para a evolução do projeto e análise de dados para o desenvolvimento da página de visualização.
 
 <ul>
-	<li>ttps://github.com/brunabellini/CENIPA_API</li>
+	<li>https://github.com/brunabellini/CENIPA_API</li>
 </ul>
 <br />
 	
