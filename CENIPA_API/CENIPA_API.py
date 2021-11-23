@@ -5,6 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import re
 import numpy as np
+import csv
+import requests
 
 '''
 Funções Complementares 
@@ -24,11 +26,16 @@ class CENIPA_API:
 	'''
 	Esta superclasse representa um extrator com finalidade de utilizar dados públicos para entender características e correlações aeronáuticas da aviação civil brasileira nos últimos 10 anos
 	'''
-	def __init__(self):
+	def __init__(self, path= None):
 		'''
 		Inicializador 
   		'''
-		path = './Data/df_final_aeronautico.csv'
+		if not path:
+			path = './Data/df_final_aeronautico.csv'
+			CSV_URL = 'https://raw.githubusercontent.com/brunabellini/CENIPA_API/main/Data/df_final_aeronautico.csv'
+			with requests.Session() as S:
+				download = S.get(CSV_URL)
+				decoded_content = download.content.decode('utf-8')
 		self.df = pd.read_csv(path, sep=';')
 		
 	def get_table(self):
