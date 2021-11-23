@@ -54,6 +54,10 @@
 <strong>Instalando esta API</strong>
 
     pip install CENIPA_API
+    
+<strong>Importando a API</strong>
+
+    import CENIPA_API
 
 <h2>Resultados</h2>
 
