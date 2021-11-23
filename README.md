@@ -23,7 +23,7 @@
 
 
 <p>
-	<p>Diante da fatalidade que ocorreu no dia 5 de novembro, que ocasionou na morte da cantora Marília Mendonça e mais 4 pessoas, nosso grupo iniciou uma pesquisa sobre acidentes aéreos, identificamos uma base de dados de ocorrências aeronáuticas, que é gerenciada pelo Centro de Investigação e Prevenção de Acidentes Aeronáuticos (CENIPA).  Constam nesta base de dados as ocorrências aeronáuticas notificadas ao CENIPA nos últimos 10 anos e que ocorreram em solo brasileiro. O relatório conta com detalhes sobre os acidentes, fatalidades, características das aeronaves, causas e fatores contribuintes, local, data, horário do evento e recomendações. A partir disso, compilamos os dados sobre as ocorrências e trouxemos algumas análises sobre o que obtemos, com gráficos, estatísticas e Dataframes. Permitindo uma ampla visualização, a compreensão mais abrangente dos fatos ocorridos e a obtenção de conclusões. </p>
+	Diante da fatalidade que ocorreu no dia 5 de novembro, que ocasionou na morte da cantora Marília Mendonça e mais 4 pessoas, nosso grupo iniciou uma pesquisa sobre acidentes aéreos, identificamos uma base de dados de ocorrências aeronáuticas, que é gerenciada pelo Centro de Investigação e Prevenção de Acidentes Aeronáuticos (CENIPA).  Constam nesta base de dados as ocorrências aeronáuticas notificadas ao CENIPA nos últimos 10 anos e que ocorreram em solo brasileiro. O relatório conta com detalhes sobre os acidentes, fatalidades, características das aeronaves, causas e fatores contribuintes, local, data, horário do evento e recomendações. A partir disso, compilamos os dados sobre as ocorrências e trouxemos algumas análises sobre o que obtemos, com gráficos, estatísticas e Dataframes. Permitindo uma ampla visualização, a compreensão mais abrangente dos fatos ocorridos e a obtenção de conclusões.
 	
 </p>
 
@@ -37,6 +37,17 @@
     matplotlib
     re
     numpy
+
+<br />
+
+<strong>Baixando a base de dados</strong>
+<p>
+	Ao baixar o arquivo csv no link abaixo é necessário que o mesmo se encontre no local em que você irá utilizar a biblioteca
+</p>
+	
+<ul>
+	<li>https://bit.ly/dowload_csv_CENIPA</li>
+</ul>
 
 <br />
 
