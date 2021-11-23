@@ -1,14 +1,14 @@
 <h2>CENIPA API</h2>
 <p>O CENIPA API é um framework que auxilia o entendimento sobre acidentes aéreos no Brasil com auxílio de sua base de dados pública. Facilitando, assim, o seu acesso e uso.</p>
 
-<h4><a href="#about">Autores</a> | <a href="#introduction">Introdução</a> | <a href="#instruction">Instruções de uso</a> | <a href="#reference">Referência</a> | <a href="#functions">Funções disponíveis</a> |</h4>
+<h4><a href="#about">Autores</a> | <a href="#introduction">Introdução</a> | <a href="#instruction">Instruções de uso</a> | <a href="#reference">Referência</a> | <a href="#functions">Funções disponíveis</a> | <a href="#code">Código da biblioteca</a> </h4>
 
 
 <h2 id="about">Autores</h2>
 
 <br />
 
-<p><b>Turma da graduação de Ciência de Dados e Inteligência Artificial na PUC-SP<b/></p>
+<p>Turma da graduação de Ciência de Dados e Inteligência Artificial na PUC-SP</p>
 
 <br />
 
@@ -33,39 +33,45 @@
 
 <strong>Bibliotecas necessárias</strong>
 
-    pandas
-    matplotlib
-    re
-    numpy
-
-<br />
-
-<strong>Baixando a base de dados</strong>
-<p>
-	Ao baixar o arquivo csv no link abaixo é necessário que o mesmo se encontre no local em que você irá utilizar a biblioteca
-</p>
-	
-<ul>
-	<li>https://bit.ly/dowload_csv_CENIPA</li>
-</ul>
+    pip install pandas
+    pip install matplotlib
+    pip install re
+    pip install numpy
 
 <br />
 
 <strong>Instalando esta API</strong>
 
-    pip install CENIPA_API
+    pip install CENIPA-API
+    
+ <br/>   
     
 <strong>Importando a API</strong>
 
-    import CENIPA_API
+    import CENIPA-API
 
-<h2>Resultados</h2>
+<br />
 
-Abaixo você encontra o link do repositório com todos os códigos e dados até então coletados para a evolução do projeto e análise de dados para o desenvolvimento da página de visualização.
+<strong>Utilizando a API</strong>
+<p>Chame uma das duas classes da biblioteca, rceomendamos que utilizem a classe Insights, pois essa herda s funções da CENIPA_API, assim você obterá acesso a todas as funções disponíveis da biblioteca. Segue abaixo exemplos de uso:</p>
 
-<ul>
-	<li>https://github.com/brunabellini/CENIPA_API</li>
-</ul>
+<p>Chamando diretamente pelo comando do import</p>
+
+	from CENIPA-API import CENIPA_API
+	from CENIPA-API import Insights
+	
+	tabela = Insights()
+	tabela.get_table
+
+<p>Chamando através de uma variável</p>
+	
+	tabela = CENIPA_API.Insights()
+	tabela.get_table
+	
+<p>Resultado do exemplo</p>
+
+<img width="1096" alt="Screen Shot 2021-11-23 at 11 35 31" src="https://user-images.githubusercontent.com/80490047/143074324-81cd5be9-dba9-4acc-9518-2424f6827a68.png">
+
 <br />
 	
 <h2 id="functions">Funções disponíveis</h2>
@@ -98,6 +104,18 @@ Abaixo você encontra o link do repositório com todos os códigos e dados até 
 		<li>nome_UF= nome da sigla do estado que deseja utilizar</li>
 	</ul>
 </p>
+
+<br />
+
+<h2 id="code">Código da biblioteca</h2>
+
+Abaixo você encontra o link do repositório com todos os códigos e dados até então coletados para a evolução do projeto e análise de dados para o desenvolvimento da página de visualização.
+
+<ul>
+	<li>https://github.com/brunabellini/CENIPA_API</li>
+</ul>
+
+<br />
 
 <h2 id="reference">Referência</h2>
 
