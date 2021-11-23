@@ -1,7 +1,3 @@
-<html>
-<head>
-<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
-
 <h2>CENIPA API</h2>
 <p>O CENIPA API é um framework que auxilia o entendimento sobre acidentes aéreos no Brasil com auxílio de sua base de dados pública. Facilitando, assim, o seu acesso e uso.</p>
 
