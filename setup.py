@@ -5,7 +5,7 @@ with open('README.md', encoding="utf-8") as f:
 
 setup(
     name = 'CENIPA_API',
-    version = '0.0.5',
+    version = '0.0.6',
     description = 'Coleta e análise dos últimos 10 anos de ocorrencias registradas pelo CENIPA',
     long_description = long_description,
     long_description_content_type='text/markdown',
